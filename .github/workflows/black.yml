@@ -15,7 +15,7 @@ jobs:
           python-version: '3.9'  # Ajuster la version Python si nécessaire
  
       - run: pip install black
- 
+      #test
       - run: black .
  
       - name: Commit changes if needed
