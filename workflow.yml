@@ -1,6 +1,8 @@
-name: Python CI avec Tests Unitaires # nom du WF (workflow)
-
-on: [push, pull_request] #exécuté à chaque push sur toutes les branches et à chaque création de pull request
+ame: Tests Python 
+ 
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build-and-test:
