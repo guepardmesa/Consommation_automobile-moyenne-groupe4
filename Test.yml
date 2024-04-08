@@ -1,0 +1,31 @@
+Name: Tests Python 
+ 
+on:
+  push:
+    branches: Lea
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest #machine sur laquelle ca sera exécuté 
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, 3.10] #test sur différentes bersions de python 
+
+    steps:
+    - uses: actions/checkout@v2 #utilisa action checkout pour cloner de code source 
+
+    - name: Set up Python ${{ matrix.python-version }} #installe la version  de python 
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    -    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+        pip install -r requirements.txt
+
+   - name: Run pytest
+  run: |
+    pytest test_parcourir.py
+
