@@ -2,7 +2,7 @@ Name: Tests Python
  
 on:
   push:
-    branches: [ main ]
+    branches: Lea
 
 jobs:
   build-and-test:
